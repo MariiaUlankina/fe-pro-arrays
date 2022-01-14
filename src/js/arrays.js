@@ -8,7 +8,7 @@ function forEach(array, callback) {
   for (let i = 0; i < array.length; i++ ){
     callback(array[i], i, array);
   }
-  return array;
+  //return array;
 }
 
 /* Функция принимает в себе первым аргументом массив, вторым функцию которая будет вызываться для каждого элемента массива
