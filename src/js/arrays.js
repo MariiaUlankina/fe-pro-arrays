@@ -8,7 +8,6 @@ function forEach(array, callback) {
   for (let i = 0; i < array.length; i++ ){
     callback(array[i], i, array);
   }
-  //return array;
 }
 
 /* Функция принимает в себе первым аргументом массив, вторым функцию которая будет вызываться для каждого элемента массива
@@ -39,7 +38,6 @@ function filter(array, callback) {
       };
   }
       return newArray;  
-
 }
 
 /* Функция принимает в себе первым аргументом массив, вторым функцию которая будет вызываться для каждого элемента массива, 3 аргумент изначальный вариант
@@ -62,7 +60,12 @@ function reduce(array, callback, initialValue) {
  Помните, что вы передаете функцию, которая ожидает 3 аргумента, текущий элемент, индекс и сам массив. Автоматическая проверка будет это учитывать.
 */
 function some(array, callback) {
-
+  for (let i = 0; i < array.length; i++ ){
+   if (callback(array[i], i, array)){
+     return true;
+   }
+  }
+  return false;
 }
 
 /* Функция принимает в себе первым аргументом массив, вторым функцию которая будет вызываться для каждого элемента массива
@@ -72,6 +75,12 @@ function some(array, callback) {
  Помните, что вы передаете функцию, которая ожидает 3 аргумента, текущий элемент, индекс и сам массив. Автоматическая проверка будет это учитывать.
 */
 function every(array, callback) {
+  for (let i = 0; i < array.length; i++ ){
+    if (!callback(array[i], i, array)){
+      return false;
+    }
+   }
+   return true;
 
 }
 
