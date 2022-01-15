@@ -32,7 +32,13 @@ function map(array, callback) {
  Помните, что вы передаете функцию, которая ожидает 3 аргумента, текущий элемент, индекс и сам массив. Автоматическая проверка будет это учитывать.
 */
 function filter(array, callback) {
-  
+  const newArray = [];
+  for (let i = 0; i < array.length; i++ ){
+      if (callback(array[i], i, array)){
+        newArray.push(array[i])
+      };
+  }
+      return newArray;  
 
 }
 
